@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import fxmltableview.*?>
+
+<GridPane alignment="CENTER" hgap="10.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="main.java.pers.ztf.gather.controller.MainController">  
+    <padding>  
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />  
+    </padding>
+   <children>
+       <TableView fx:id="tview_student" GridPane.columnIndex="1" GridPane.rowIndex="1">  
+             <columns>
+   	         <TableColumn fx:id="col_studentId" prefWidth="200" text="学号">
+   	                 <cellValueFactory>
+                  <PropertyValueFactory property="studentId" />
+         				 </cellValueFactory>
+   	         </TableColumn>
+   	         <TableColumn fx:id="col_studentName" prefWidth="100" text="姓名">
+   	         		 <cellValueFactory>
+                  <PropertyValueFactory property="studentName" />
+         				 </cellValueFactory>
+   	         </TableColumn>
+   	         <TableColumn fx:id="scoreMan_btn" prefWidth="100" text="操作">
+        	  </TableColumn>
+     		   </columns>    
+       </TableView>
+        <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+           <children>
+                <TextField fx:id="tf_studentId" prefWidth="90" promptText="学号" />
+                <TextField fx:id="tf_studentName" prefWidth="90" promptText="姓名" />
+                <Button onAction="#addStudent" text="新增学生" />
+           </children>
+        </HBox>
+        <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
+           <children>
+                <Button onAction="#leadInStudentExcel" text="导入Excel(学生数据)" />
+                <Button onAction="#leadInScoreExcel" text="导入Excel(成绩数据)" />
+           </children>
+        </HBox>
+      <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1">
+         <children>
+            <Button onAction="#countAvgScore" text="平均成绩" />
+            <Button onAction="#countMaxScore" text="科目最高分" />
+            <Button onAction="#countMinScore" text="科目最低分" />
+         </children>
+      </HBox>
+   </children>
+
+</GridPane>
